@@ -1,15 +1,14 @@
 {
-  "name": "nodekafka",
+  "name": "nodeproducer",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "kafkajs": "^1.15.0",
-    "socket.io": "^4.1.2"
+    "kafkajs": "^1.15.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.9",
