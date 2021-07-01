@@ -1,6 +1,8 @@
 import express from 'express';
 import { CompressionTypes } from 'kafkajs';
 
+import { POWER_TOPIC } from './server';
+
 const routes = express.Router();
 
 let data = {}
@@ -21,7 +23,7 @@ routes.post('/data/power/:id', async (req, res) => {
 
   // Chamar micro serviço
   await req.producer.send({
-    topic: 'POWER_SENSORS',
+    topic: POWER_TOPIC,
     compression: CompressionTypes.GZIP,
     messages: [
       { value: JSON.stringify(Measurement) }
@@ -31,7 +33,7 @@ routes.post('/data/power/:id', async (req, res) => {
   return res.status(201).send();
 });
 
-routes.get('/data/power/:id', async (req, res) => {
+routes.get('/data/power/', async (req, res) => {
   return res.json(data)
 });
 

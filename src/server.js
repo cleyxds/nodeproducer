@@ -3,15 +3,19 @@ import { Kafka, logLevel } from 'kafkajs';
 
 import routes from './routes';
 
+const SERVER_PORT = 3333
+
 const app = express();
+
+export const POWER_TOPIC = 'POWER_SENSORS';
 
 /**
  * Faz conexão com o Kafka
  */
-const kafka = new Kafka({
-  clientId: 'elecktra',
+export const kafka = new Kafka({
+  clientId: 'ELECKTRA',
   brokers: ['localhost:9092'],
-  logLevel: logLevel.WARN,
+  logLevel: logLevel.NOTHING,
   retry: {
     initialRetryTime: 300,
     retries: 10
@@ -30,12 +34,6 @@ app.use((req, res, next) => {
   return next();
 });
 
-app.use((req, res, next) => {
-  res.consumer = consumer;
-
-  return next();
-})
-
 /**
  * Cadastra as rotas da aplicação
  */
@@ -46,16 +44,16 @@ async function run() {
   await producer.connect()
   await consumer.connect()
 
-  await consumer.subscribe({ topic: 'POWER_SENSORS' });
+  await consumer.subscribe({ topic: POWER_TOPIC });
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      console.log('Resposta: ', String(message.value));
+      const measurement = JSON.parse(String(message.value));
+      console.log(measurement);
     },
   });
 
-  app.listen(3333, () => {console.log("Server running on port 3333")});
+  app.listen(SERVER_PORT, () => {console.log(`Server ready on port ${SERVER_PORT}`)});
 }
 
 run().catch(console.error)
-
