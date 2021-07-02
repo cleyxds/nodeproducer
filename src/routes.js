@@ -1,7 +1,7 @@
 import express from 'express';
 import { CompressionTypes } from 'kafkajs';
 
-import { POWER_TOPIC } from './server';
+import { POWER_TOPIC } from './server.js';
 
 const routes = express.Router();
 

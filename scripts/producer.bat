@@ -1,1 +1,1 @@
-C:\kafka_2.13-2.8.0\bin\windows\kafka-console-producer.bat --topic POWER_SENSORS --bootstrap-server localhost:9092
+C:\kafka_2.13-2.8.0\bin\windows\kafka-console-producer.bat --topic POWER_SENSORS --bootstrap-server localhost:9093

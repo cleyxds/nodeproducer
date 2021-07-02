@@ -1,0 +1,10 @@
+/node_modules
+/scripts
+Dockerfile
+
+compose.yaml
+nodemon.json
+
+.dockerignore
+.git
+.gitignore
