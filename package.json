@@ -12,7 +12,6 @@
     "kafkajs": "^1.15.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.9",
-    "sucrase": "^3.19.0"
+    "nodemon": "^2.0.9"
   }
 }

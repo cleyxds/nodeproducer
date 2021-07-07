@@ -12,7 +12,7 @@ const app = express();
 export const kafka = new Kafka({
   clientId: 'ELECKTRA-PRODUCER',
   brokers: [KAFKA_BROKERS],
-  logLevel: logLevel.NOTHING
+  logLevel: logLevel.NOTHING,
 });
  
 const producer = kafka.producer();
@@ -30,7 +30,7 @@ app.use(routes);
 kafka_api(false).catch(console.error);
 
 async function kafka_api(debug) {
-  await producer.connect().catch(reason => console.log(`Error on connect producer \n ${reason}`));
+  await producer.connect().catch(reason => console.log(`Error on connect producer, reason => ${reason}`));
   
   if (debug) {
     await consumer.connect();
