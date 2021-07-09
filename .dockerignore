@@ -1,9 +1,9 @@
+/build
 /node_modules
 /scripts
-Dockerfile
 
-compose.yaml
 nodemon.json
+Dockerfile
 
 .dockerignore
 .git
