@@ -12,7 +12,7 @@ A Node.js Kafka Producer to serve data for a Kafka topic
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`SERVER_PORT` *usually **3333***
+`SERVER_PORT` *always **3333***
 
 `KAFKA_BROKERS` *points to a kafka broker **host:port***
 

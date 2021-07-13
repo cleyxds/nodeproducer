@@ -3,8 +3,11 @@
 /scripts
 
 nodemon.json
+README.md
+LICENSE.md
 Dockerfile
 
 .dockerignore
 .git
 .gitignore
+.env
