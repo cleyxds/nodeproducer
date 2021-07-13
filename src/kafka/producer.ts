@@ -5,6 +5,12 @@ const KAFKA_BROKERS = process.env.KAFKA_BROKERS
 export const kafka = new Kafka({
   brokers: [KAFKA_BROKERS],
   logLevel: logLevel.NOTHING,
+  sasl: {
+    mechanism: 'plain',
+    username: process.env.KAFKA_CLIENT_ID,
+    password: process.env.KAFKA_CLIENT_SECRET
+  },
+  ssl: true
 })
 
 export const producer = kafka.producer()
