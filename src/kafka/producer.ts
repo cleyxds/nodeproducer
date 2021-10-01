@@ -1,5 +1,8 @@
 import { Kafka, logLevel } from 'kafkajs'
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 const KAFKA_BROKERS = process.env.KAFKA_BROKERS
 
 export const kafka = new Kafka({
