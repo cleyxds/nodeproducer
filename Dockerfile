@@ -13,5 +13,6 @@ RUN yarn build
 USER node
 
 EXPOSE 3333
+EXPOSE 33334
 
-CMD ["node", "build/server.js"]
+CMD ["node", "build/services.js"]

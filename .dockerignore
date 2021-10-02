@@ -1,6 +1,5 @@
 /build
 /node_modules
-/scripts
 
 nodemon.json
 README.md
@@ -10,4 +9,3 @@ Dockerfile
 .dockerignore
 .git
 .gitignore
-.env

@@ -1,1 +1,0 @@
-C:\kafka_2.13-2.8.0\bin\windows\kafka-console-consumer.bat --topic POWER_SENSORS --from-beginning --bootstrap-server localhost:9092
